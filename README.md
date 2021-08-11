@@ -2,7 +2,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2b36648d-d9ba-4ad6-aa39-015bb3b4104d/deploy-status)](https://app.netlify.com/sites/cocky-benz-c62210/deploys)
 
-[Production Site]()
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+[Production Site](https://covivi.netlify.app/)
+[CD](https://app.netlify.com/sites/covivi/deploys)
+[Project Board](https://github.com/S3ak/covid-dashboard-redux/projects/1?add_cards_query=is%3Aopen)
+[Storybook]()
+[Postman collection](https://documenter.getpostman.com/view/664217/Tzz5tydH)
+[Wireframes]()
+[Anayltics Dashboard]()
+
+## Prerequisites
+
+Node (I recommend using v12..0 or higher)
+Yarn CLI
+
+## Features
+
+- [ ] Styled-components + styled-tools + polished
+- [ ] typescript
+- [ ] Semantice Release + husky + commit-zen
+- [ ] React Query
+- [ ] Storybook
+- [ ] Unit Testing (RTL)
+- [ ] e2e Testing (Cypress)
+- [x] Netlify deploy configuration
 
 ## Available Scripts
 
