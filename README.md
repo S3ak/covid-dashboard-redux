@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b36648d-d9ba-4ad6-aa39-015bb3b4104d/deploy-status)](https://app.netlify.com/sites/cocky-benz-c62210/deploys)
+
+[Production Site]()
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -42,3 +46,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Requirements
+
+You must use React.js.
+You must use redux + thunk (We are aware that it is a small application but we would like to see your skillset in Redux).
+All api calls should be made in Redux thunk.
+You may use a CSS Framework.
+You should use any one of the following: SCSS, LESS or CSS in JS.
+You can use create-react-app if you choose.
+Extra information
+https://covid19.mathdro.id/api/
+The api with various other end points can be found in the URL.
+It is not a requirement, however if you would like to make use of other data you are welcome to.
+If you have any questions please feel free to mail michael.john.phillip@noroff.no or cameron.moodley@noroff.no
