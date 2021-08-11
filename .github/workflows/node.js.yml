@@ -26,5 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm test
-    - run: npm run semantic-release
+    - run: yarn
+    - run: yarn test
+    - run: yarn run semantic-release
