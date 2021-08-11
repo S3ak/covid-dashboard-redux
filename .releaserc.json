@@ -1,0 +1,4 @@
+{
+  "branches": ["master"],
+  "extends": "semantic-release-npm-github-publish"
+}

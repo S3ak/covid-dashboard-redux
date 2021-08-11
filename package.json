@@ -1,6 +1,9 @@
 {
   "name": "norof-fetrt-redux",
-  "author": "Monde Sineke",
+  "author": {
+    "name": "Monde Sineke",
+    "email": "nsineke@gmail.com"
+  },
   "bugs": {
     "url": "https://github.com/Noroff-Fagskole/frontend_technical_recruitment_test/issues",
     "email": "nsineke@gmail.com"
@@ -21,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "semantic-release": "^17.4.4",
+    "semantic-release-npm-github-publish": "^1.4.0"
   }
 }
