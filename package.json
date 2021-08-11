@@ -1,5 +1,10 @@
 {
   "name": "norof-fetrt-redux",
+  "author": "Monde Sineke",
+  "bugs": {
+    "url": "https://github.com/Noroff-Fagskole/frontend_technical_recruitment_test/issues",
+    "email": "nsineke@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
