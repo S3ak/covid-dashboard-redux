@@ -28,4 +28,7 @@ jobs:
         cache: 'npm'
     - run: yarn
     - run: yarn test
-    - run: yarn run semantic-release
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
