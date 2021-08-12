@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import mockRegions from "../../mocks/fixtures/regions.json";
+import {
+  selectRegions,
+  getConfirmedRegionsAsync,
+} from "./confirmedRegionSlice";
 
 const Container = styled.div`
   width: 100%;
@@ -26,7 +30,23 @@ const Item = styled.li`
   }
 `;
 
-function RegionList({ regions = mockRegions }) {
+function RegionList() {
+  const { status, regions = [], error } = useSelector(selectRegions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getConfirmedRegionsAsync());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (status === "loading") {
+    return <div>loading</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <Container>
       <List>
