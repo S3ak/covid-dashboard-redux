@@ -6,7 +6,6 @@ import mockRegions from "../../mocks/fixtures/regions.json";
 const Container = styled.div`
   width: 100%;
   background: #fff;
-  border: 1px solid black;
 `;
 
 const List = styled.ul`
@@ -16,8 +15,14 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
+  margin: auto;
+  width: 99%;
+  border: 1px solid red;
+  min-height: 32px;
+  padding-top: 10px;
+
   & + & {
-    padding-top: 10px;
+    padding-top: 2vh;
   }
 `;
 
