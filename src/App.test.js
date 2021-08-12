@@ -11,5 +11,5 @@ test("renders list", () => {
     </Provider>
   );
 
-  expect(getByText(/Maharashtra, India/i)).toBeInTheDocument();
+  expect(getByText(/loading/i)).toBeInTheDocument();
 });
