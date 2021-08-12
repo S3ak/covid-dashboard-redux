@@ -11,6 +11,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Postman collection](https://documenter.getpostman.com/view/664217/Tzz5tydH)
 [Wireframes]()
 [Anayltics Dashboard]()
+[Brief](https://github.com/Noroff-Fagskole/frontend_technical_recruitment_test)
+
+## Acceptence Criteria
+
+- Typeahead
 
 ## Prerequisites
 
@@ -26,6 +31,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Storybook
 - [ ] Unit Testing (RTL)
 - [ ] e2e Testing (Cypress)
+- [ ] React Select
+- [ ] Formik
+- [ ] [react-windowed-select](https://www.npmjs.com/package/react-windowed-select)
 - [x] Netlify deploy configuration
 
 ## Available Scripts
