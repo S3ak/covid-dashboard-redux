@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { fetchRegions } from "./confirmedRegionAPI";
+import { fetchRegions } from "../../services/covid19";
 
 const initialState = {
   regions: [],
