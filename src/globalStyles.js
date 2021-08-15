@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
             #393a3f;
     --color-intent-text: #fff;
     --size-global-horizontal-bleed: 20px;
+    --content-container-width: 670px;
 
 
     --size-base: 14px;
