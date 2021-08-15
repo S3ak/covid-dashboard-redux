@@ -81,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: var(--f-size-base, 16px);
     font-family: 'Playfair Display', serif;
+    background: var(--c-bg);
   }
 
   html, body {

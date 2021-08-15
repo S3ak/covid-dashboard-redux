@@ -9,6 +9,7 @@ import Aside from "../siteAside";
 const Container = styled.div`
   width: 100%;
   display: grid;
+  background: var(--c-bg);
   grid-template-rows: min-content auto auto minmax(min-content, max-content);
   grid-template-columns: auto;
   grid-template-areas:
@@ -19,12 +20,12 @@ const Container = styled.div`
 
   ${media.greaterThan("medium")`
   grid-template-rows: min-content 2fr minmax(min-content, 1fr);
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(16px, 1fr) auto 2fr minmax(16px, 1fr);
 
     grid-template-areas:
-      "header header"
-      "aside main"
-      "footer footer";
+      "header header header header"
+      ". aside main ."
+      "footer footer footer footer";
   `}
 `;
 
