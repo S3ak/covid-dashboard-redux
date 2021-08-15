@@ -5,9 +5,15 @@ import { fetchRegions } from "../../services/covid19";
 const initialState = {
   regions: [],
   selectedRegion: null,
-  status: "idle",
+  status: "loading",
   error: null,
 };
+
+export const DEFAULT_REGION = "South Africa";
+
+export function findSelectedRegionByName(regions, regionName) {
+  return regions.find(({ combinedKey }) => combinedKey === regionName);
+}
 
 export const getConfirmedRegionsAsync = createAsyncThunk(
   "confirmedRegions/fetchRegions",
@@ -35,6 +41,10 @@ export const regionsSlice = createSlice({
       .addCase(getConfirmedRegionsAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.regions = action.payload;
+        state.selectedRegion = findSelectedRegionByName(
+          action.payload,
+          DEFAULT_REGION
+        );
       })
       .addCase(getConfirmedRegionsAsync.rejected, (state, action) => {
         state.status = "idle";

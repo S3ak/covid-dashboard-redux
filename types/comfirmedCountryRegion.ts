@@ -31,9 +31,9 @@ interface comfirmedCountryRegion {
   combinedKey?: string;
   /*  @example 4306.68760345238 */
   incidentRate?: string;
-  /*  @example India */
+  /*  @example 999 */
   peopleTested?: null | number;
-  /*  @example India */
+  /*  @example 999 */
   peopleHospitalized?: null | number;
   /*  @example 710 */
   uid: number;

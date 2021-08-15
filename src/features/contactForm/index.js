@@ -9,25 +9,72 @@ import { selectContactForm } from "./contactFormSlice";
 
 const Form = styled.form`
   margin: auto;
-  padding: 32px;
+  padding: var(--size-m) var(--size-m) 0;
   width: 100%;
-  max-width: 800px;
+  max-width: var(--content-container-width);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-m);
 `;
 
 const FormField = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--size-s);
 `;
 
-const ValidationMessage = styled.div`
+const ValidationMessage = styled.p`
   width: 100%;
   color: red;
   font-size: 0.8rem;
+`;
+
+const Label = styled.label`
+  font-size: var(--f-size);
+`;
+
+const Text = styled.h2`
+  font-size: var(--f-size-l);
+`;
+
+const Input = styled.input`
+  min-height: 34px;
+  font-size: var(--f-size-m);
+  padding: var(--size-xs);
+  border: 1px solid var(--c-accent);
+  border-radius: var(--radius-s);
+`;
+
+const Button = styled.button`
+  outline: none;
+  width: 65%;
+  min-width: 170px;
+  max-width: 300px;
+  min-height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--f-size-m);
+  color: var(--c-action);
+  border: 2px solid currentColor;
+  border-radius: var(--radius-s);
+  background-color: transparent;
+  cursor: pointer;
+  transition: box-shadow 400ms, border 300ms;
+
+  :hover {
+    border: 3px solid currentColor;
+    box-shadow: 4px 5px 19px -9px rgba(0, 0, 0, 0.54);
+  }
+
+  :disabled {
+    cursor: blocked;
+    border: 3px solid currentColor;
+    color: var(--c-disabled);
+  }
 `;
 
 const formSchema = [
@@ -44,6 +91,10 @@ const formSchema = [
     type: "text",
   },
 ];
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export default function ContactForm() {
   const { status, isSuccess } = useSelector(selectContactForm);
@@ -65,18 +116,18 @@ export default function ContactForm() {
     (status === "posting" && formik.isSubmitting) || !formik.isValid;
 
   return (
-    <div>
+    <>
       {isSuccess ? (
-        <p>Thank you for reaching out</p>
+        <Text>Thank you for reaching out</Text>
       ) : (
         <Form onSubmit={formik.handleSubmit}>
-          <h2>Contact Us</h2>
+          <Text>Contact Us</Text>
 
           {formSchema.map(({ id, type }) => (
             <FormField key={id}>
-              <label htmlFor={id}>{id}</label>
+              <Label htmlFor={id}>{capitalizeFirstLetter(id)}</Label>
 
-              <input
+              <Input
                 id={id}
                 name={id}
                 type={type}
@@ -87,11 +138,11 @@ export default function ContactForm() {
             </FormField>
           ))}
 
-          <button disabled={isSubmitDisabled} type="submit">
+          <Button disabled={isSubmitDisabled} type="submit">
             Submit
-          </button>
+          </Button>
         </Form>
       )}
-    </div>
+    </>
   );
 }

@@ -12,13 +12,15 @@ const GlobalStyle = createGlobalStyle`
     --color-senary: #4361ee;
     --color-septenary: #d00000;
     --color-black: #021526;
+    --color-grey: #bdbdbd;
 
     --c-success: var(--color-secondary);
     --c-danger: var(--color-septenary);
     --c-action: var(--color-senary);
     --c-info: var(--color-quaternary);
-    --c-muted: #bdbdbd;
+    --c-muted: var(--color-grey);
     --c-accent: var(--color-quinary);
+    --c-disabled: var(--color-grey);
     --c-text: var(--color-black);
     --c-text--inverse: var(--color-primary);
 
@@ -34,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
             #393a3f;
     --color-intent-text: #fff;
     --size-global-horizontal-bleed: 20px;
+    --content-container-width: 680px;
 
 
     --size-base: 14px;
@@ -46,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
     --size-xl: 3.375rem;
     --size-xxl: 5.063rem;
     --size-huge: 7.594rem;
+
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 16px;
 
     // NOTE: https://type-scale.com/?size=14&scale=1.333&text=A%20Visual%20Type%20Scale&font=Roboto&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
     --f-size-base: 14px;

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Wrapper } from "./styled";
+import { Wrapper, StyledInput } from "./styled";
 
-export const InputField = ({ children, value = "value", ...otherProps }) => {
+export const InputField = ({ children, ...inputProps }) => {
   return (
     <Wrapper>
-      <input value={value} {...otherProps} />
+      <StyledInput {...inputProps} />
       {children}
     </Wrapper>
   );
