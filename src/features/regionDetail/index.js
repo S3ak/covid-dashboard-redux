@@ -4,9 +4,17 @@ import { useSelector } from "react-redux";
 // import { selectRegion, getRegionState } from "./regionDetailSlice";
 import { selectRegions } from "../confirmedRegions/confirmedRegionSlice";
 
-import { Container, Header, Section, Description, DetailsList } from "./styled";
+import {
+  Container,
+  Header,
+  Section,
+  Description,
+  DetailsList,
+  Figure,
+} from "./styled";
 
 import DetailField from "../../components/detailField";
+import { BASE_URL } from ".././../services/covid19";
 
 export function convertFromCamelToSentenceCase(text) {
   const result = text.replace(/([A-Z])/g, " $1");
@@ -47,10 +55,13 @@ function RegionView() {
       <Section>
         <Header>{title}</Header>
         <Description>{description}</Description>
-        {/* TODO:
+
         <Figure>
-          <img alt="Graph image" src={graphSrc} />
-        </Figure> */}
+          <img
+            alt={`Graph of covid-19 data for ${title}`}
+            src={`${BASE_URL}/api/countries/${title}/og`}
+          />
+        </Figure>
         {/* TODO: 
         <Status cases={cases28Days} deaths={deaths28Days} /> */}
       </Section>

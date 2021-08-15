@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "https://covid19.mathdro.id";
+export const BASE_URL = "https://covid19.mathdro.id";
 
 /**
  * Serves data from
@@ -56,7 +56,7 @@ export const covid19Api = createApi({
     }),
     // /api/countries/[country]/og: generate a summary open graph image for a [country]
     getOpenGraphByCountry: builder.query({
-      query: (country) => `api/countries/${country}/og`,
+      query: (country) => `countries/${country}/og`,
     }),
   }),
 });
@@ -66,4 +66,5 @@ export async function fetchRegions() {
   return response.json();
 }
 
-export const { useGetConfirmedRegionsQuery } = covid19Api;
+export const { useGetConfirmedRegionsQuery, useGetOpenGraphByCountryQuery } =
+  covid19Api;

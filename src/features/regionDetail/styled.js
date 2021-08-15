@@ -30,6 +30,11 @@ export const Description = styled.p`
 export const Figure = styled.figure`
   width: 100%;
   flex: 1 1 auto;
+  margin-top: var(--size-s);
+
+  img {
+    width: 100%;
+  }
 `;
 
 export const DetailsList = styled.div`
