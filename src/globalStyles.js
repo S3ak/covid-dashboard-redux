@@ -15,10 +15,10 @@ const GlobalStyle = createGlobalStyle`
 
     --c-success: var(--color-secondary);
     --c-danger: var(--color-septenary);
-    --c-action: var(--color-quinary);
+    --c-action: var(--color-senary);
     --c-info: var(--color-quaternary);
     --c-muted: #bdbdbd;
-    --c-accent: var(--color-senary);
+    --c-accent: var(--color-quinary);
     --c-text: var(--color-black);
     --c-text--inverse: var(--color-primary);
 
@@ -37,13 +37,15 @@ const GlobalStyle = createGlobalStyle`
 
 
     --size-base: 14px;
-    --size-xxs: 16px;
-    --size-xs: 16px;
-    --size-s: 16px;
-    --size-m: 16px;
-    --size-l: 16px;
-    --size-xl: 16px;
-    --size-xxl: 16px;
+    --size-xxs: 0.296rem;
+    --size-xs: 0.444rem;
+    --size-s: 0.667rem;
+    --size: 1rem;
+    --size-m: 1.5rem;
+    --size-l: 2.25rem;
+    --size-xl: 3.375rem;
+    --size-xxl: 5.063rem;
+    --size-huge: 7.594rem;
 
     // NOTE: https://type-scale.com/?size=14&scale=1.333&text=A%20Visual%20Type%20Scale&font=Roboto&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
     --f-size-base: 14px;
@@ -58,13 +60,14 @@ const GlobalStyle = createGlobalStyle`
 
     ${media.greaterThan("medium")`
     --size-base: 16px;
-    --size-xxs: 16px;
-    --size-xs: 16px;
-    --size-s: 16px;
-    --size-m: 16px;
-    --size-l: 16px;
-    --size-xl: 16px;
-    --size-xxl: 16px;
+    --size-xxs: 0.236rem;
+    --size-xs: 0.382rem;
+    --size-s: 0.618rem;
+    --size-m: 1.618rem;
+    --size-l: 2.618rem;
+    --size-xl: 4.236rem;
+    --size-xxl: 6.854rem;
+    --size-huge: 11.089rem;
 
     --f-size-base: 16px;
   `}
@@ -73,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     box-sizing: border-box;
+    font-size: var(--f-size-base, 16px);
   }
 
   html, body {
@@ -80,7 +84,6 @@ const GlobalStyle = createGlobalStyle`
   },
 
   body {
-    font-size: var(--f-size-base);
     color: var(--c-text);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
@@ -112,6 +115,7 @@ const GlobalStyle = createGlobalStyle`
     background: #283618;
     background: radial-gradient(circle, rgba(20,51,38,1) 0%, rgba(27,67,50,1) 100%);
     height: 100%;
+    color: var(--c-text);
   }
 `;
 

@@ -1,7 +1,14 @@
 import React from "react";
 
-export const InputField = ({ children }) => {
-  return <span>{children}</span>;
+import { Wrapper } from "./styled";
+
+export const InputField = ({ children, value = "value", ...otherProps }) => {
+  return (
+    <Wrapper>
+      <input value={value} {...otherProps} />
+      {children}
+    </Wrapper>
+  );
 };
 
 export default InputField;
