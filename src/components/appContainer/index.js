@@ -9,7 +9,7 @@ import Aside from "../siteAside";
 const Container = styled.div`
   width: 100%;
   display: grid;
-  grid-template-rows: min-content auto auto minmax(min-content, 300px);
+  grid-template-rows: min-content auto auto minmax(min-content, max-content);
   grid-template-columns: auto;
   grid-template-areas:
     "header"
@@ -19,7 +19,7 @@ const Container = styled.div`
 
   ${media.greaterThan("medium")`
   grid-template-rows: min-content 2fr minmax(min-content, 1fr);
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
 
     grid-template-areas:
       "header header"

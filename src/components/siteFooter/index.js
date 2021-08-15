@@ -25,23 +25,21 @@ const socialLinkItems = [
 export const Footer = ({ items = socialLinkItems, children }) => {
   return (
     <Wrapper>
-      <Container>
-        <Row>
-          <ContactForm />
-        </Row>
+      <Row>
+        <ContactForm />
+      </Row>
 
-        <RowLast>
-          <Copywright>Crafted with ♥ by Monde Sineke {children}</Copywright>
+      <RowLast>
+        <Copywright>Crafted with ♥ by Monde Sineke {children}</Copywright>
 
-          <IconLinkList>
-            {items.map(({ label, Icon, href }, orderId) => (
-              <Item key={orderId} name={label} href={href}>
-                {Icon}
-              </Item>
-            ))}
-          </IconLinkList>
-        </RowLast>
-      </Container>
+        <IconLinkList>
+          {items.map(({ label, Icon, href }, orderId) => (
+            <Item key={orderId} name={label} href={href}>
+              {Icon}
+            </Item>
+          ))}
+        </IconLinkList>
+      </RowLast>
     </Wrapper>
   );
 };

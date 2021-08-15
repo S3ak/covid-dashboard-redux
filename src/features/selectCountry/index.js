@@ -14,6 +14,13 @@ import { StyledSelect, Container, Article } from "./styled";
 export default function SelectCountry() {
   const { status, regions = [], error } = useSelector(selectRegions);
   const dispatch = useDispatch();
+  const options = regions.map(({ combinedKey, ...otherProps }) => ({
+    ...otherProps,
+    value: combinedKey,
+    label: combinedKey,
+  }));
+
+  const props = {};
 
   const handleOnChange = (selected = []) => {
     if (selected.length === 0) {
@@ -29,6 +36,8 @@ export default function SelectCountry() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {}, [options]);
+
   if (status === "loading") {
     return <div>loading</div>;
   }
@@ -36,12 +45,6 @@ export default function SelectCountry() {
   if (error) {
     return <div>{error.message}</div>;
   }
-
-  const options = regions.map(({ combinedKey, ...otherProps }) => ({
-    ...otherProps,
-    value: combinedKey,
-    label: combinedKey,
-  }));
 
   return (
     <Container>
@@ -52,13 +55,19 @@ export default function SelectCountry() {
           You can use the input below to filter the regions affected by covid
         </p>
       </Article>
+
       <StyledSelect>
         <Typeahead
-          autoFocus
+          {...props}
+          open={true}
+          clearButton
+          labelkey=""
           id="selectRegion"
           onChange={handleOnChange}
           options={options}
+          newSelectionPrefix="Add a new item: "
           placeholder="search here"
+          maxHeight="66vh"
         />
       </StyledSelect>
     </Container>

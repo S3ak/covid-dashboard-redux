@@ -29,6 +29,7 @@ export const Description = styled.p`
 
 export const Figure = styled.figure`
   width: 100%;
+  max-width: 600px;
   flex: 1 1 auto;
   margin-top: var(--size-s);
 
@@ -39,6 +40,7 @@ export const Figure = styled.figure`
 
 export const DetailsList = styled.div`
   display: flex;
+  max-width: var(--content-container-width);
   flex-direction: column;
   grid-gap: var(--size-s);
   padding: var(--size-s);

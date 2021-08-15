@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 // import { selectRegion, getRegionState } from "./regionDetailSlice";
 import { selectRegions } from "../confirmedRegions/confirmedRegionSlice";
+// import Map from "../../components/map";
+import Chart from "../../components/chart";
 
 import {
   Container,
@@ -30,6 +32,9 @@ function RegionView() {
   const { status, selectedRegion, error } = useSelector(selectRegions);
 
   const title = selectedRegion?.combinedKey;
+  const country = selectedRegion?.countryRegion;
+  // const lat = selectedRegion?.lat;
+  // const long = selectedRegion?.long;
   const description = "You can view details of the selected region below";
 
   const fieldDetails = useMemo(() => {
@@ -42,7 +47,23 @@ function RegionView() {
     return list;
   }, [selectedRegion]);
 
-  if (status === "loading") {
+  const isGraphVisible = selectedRegion && country;
+  // const isMapVisible = lat && long;
+
+  const chartData = [
+    {
+      name: "28 Days ago",
+      cases: selectedRegion?.cases28Days,
+      deaths: selectedRegion?.deaths28Days,
+    },
+    {
+      name: "Now",
+      cases: selectedRegion?.confirmed,
+      deaths: selectedRegion?.deaths,
+    },
+  ];
+
+  if (status === "loading" || !selectedRegion) {
     return <div>loading</div>;
   }
 
@@ -55,17 +76,18 @@ function RegionView() {
       <Section>
         <Header>{title}</Header>
         <Description>{description}</Description>
+        {isGraphVisible && (
+          <Figure>
+            <img
+              alt={`Graph of covid-19 data for ${title}`}
+              src={`${BASE_URL}/api/countries/${encodeURI(country)}/og`}
+            />
+          </Figure>
+        )}
 
-        <Figure>
-          <img
-            alt={`Graph of covid-19 data for ${title}`}
-            src={`${BASE_URL}/api/countries/${title}/og`}
-          />
-        </Figure>
         {/* TODO: 
         <Status cases={cases28Days} deaths={deaths28Days} /> */}
       </Section>
-
       <Section>
         <DetailsList>
           {fieldDetails.map((i) => (
@@ -77,20 +99,15 @@ function RegionView() {
           ))}
         </DetailsList>
       </Section>
-
-      {/* TODO: 
-      <Map
-        latitude={lat}
-        longitude={long}
-      /> */}
-
-      {/* TODO: 
-      <Graphs
-        deaths={deaths}
-        recovered={recovered}
-        confirmed={confirmed}
-        active={active}
-      /> */}
+      {/* FIXME: Maps not displaying correctly 
+      {isMapVisible && (
+        <Section>
+          <Map latitude={lat} longitude={long} />
+        </Section>
+      )} */}
+      <Section>
+        <Chart data={chartData} />
+      </Section>
     </Container>
   );
 }
