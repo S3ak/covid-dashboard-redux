@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const Header = styled.h2`
   margin-top: var(--size-l);
   width: 100%;
-  font-size: var(--f-size-xl);
+  font-size: var(--f-size-l);
 `;
 
 export const Section = styled.div`

@@ -9,7 +9,7 @@ import {
   setSelectRegion,
 } from "../confirmedRegions/confirmedRegionSlice";
 
-import { StyledSelect, Container, Article } from "./styled";
+import { StyledSelect, Container, Article, Heading, Info } from "./styled";
 
 export default function SelectCountry() {
   const { status, regions = [], error } = useSelector(selectRegions);
@@ -49,11 +49,11 @@ export default function SelectCountry() {
   return (
     <Container>
       <Article>
-        <h2>Filter Regions</h2>
+        <Heading>Filter Regions</Heading>
 
-        <p>
+        <Info>
           You can use the input below to filter the regions affected by covid
-        </p>
+        </Info>
       </Article>
 
       <StyledSelect>

@@ -1,6 +1,5 @@
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
-import Container from "../container";
 
 import ContactForm from "../../features/contactForm";
 

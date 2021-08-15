@@ -67,6 +67,15 @@ export const StyledSelect = styled.div`
   }
 `;
 
+export const Heading = styled.h2`
+  font-size: var(--f-size-l);
+`;
+
+export const Info = styled.p`
+  font-size: var(-font-size);
+  margin-top: var(--size);
+`;
+
 export const Container = styled.form`
   height: 100%;
   display: flex;
@@ -77,7 +86,7 @@ export const Container = styled.form`
 export const Article = styled.article`
   flex: 0 1 auto;
   width: 100%;
-  padding: var(--size-m);
+  padding: var(--size-l) var(--size-m) 0;
 `;
 
 export const Form = styled.div``;
