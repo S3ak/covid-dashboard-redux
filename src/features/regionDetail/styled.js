@@ -14,10 +14,10 @@ export const Section = styled.div`
   width: 100%;
   flex: 1 1 auto;
   gap: var(--size-xxs);
-  padding: 0 var(--size-s);
+  padding: 0 var(--size-m);
 
   & + & {
-    padding: var(--size-s);
+    padding: var(--size-m);
   }
 `;
 
