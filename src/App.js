@@ -1,19 +1,25 @@
 import React from "react";
-import "./App.css";
 import { Reset } from "styled-reset";
 
+import "./App.css";
+
+import Container from "./components/appContainer";
 import GlobalStyle from "./globalStyles";
-import ConfirmedRegionList from "./features/confirmedRegions/List";
-import ContactForm from "./features/contactForm";
+
+// TODO: Import modules
+// import ConfirmedRegionList from "./features/confirmedRegions/List";
+// import ContactForm from "./features/contactForm";
+import SelectCountry from "./features/selectCountry";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Reset />
       <GlobalStyle />
-      <ContactForm />
-      <ConfirmedRegionList />
-    </div>
+      <Container asideContent={<SelectCountry />}>
+        <p>content</p>
+      </Container>
+    </>
   );
 }
 
