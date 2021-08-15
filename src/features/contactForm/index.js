@@ -70,6 +70,8 @@ export default function ContactForm() {
         <p>Thank you for reaching out</p>
       ) : (
         <Form onSubmit={formik.handleSubmit}>
+          <h2>Contact Us</h2>
+
           {formSchema.map(({ id, type }) => (
             <FormField key={id}>
               <label htmlFor={id}>{id}</label>
