@@ -2,6 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const BASE_URL = "https://covid19.mathdro.id";
 
+/**
+ * Serves data from
+ * @see {<https://github.com/mathdroid/covid-19-api>}
+ */
 export const covid19Api = createApi({
   reducerPath: "covid19Api",
   baseQuery: fetchBaseQuery({ baseUrl: `${BASE_URL}/api/` }),
@@ -58,7 +62,7 @@ export const covid19Api = createApi({
 });
 
 export async function fetchRegions() {
-  const response = await fetch("https://covid19.mathdro.id/api/confirmed");
+  const response = await fetch(`${BASE_URL}/api/confirmed`);
   return response.json();
 }
 

@@ -4,6 +4,7 @@ import { fetchRegions } from "../../services/covid19";
 
 const initialState = {
   regions: [],
+  selectedRegion: null,
   status: "idle",
   error: null,
 };
@@ -19,6 +20,11 @@ export const regionsSlice = createSlice({
   reducers: {
     confirmedRegionsAdded: (state, action) => {
       state.regions = action.payload;
+    },
+    setSelectRegion: (state, action) => {
+      state.selectedRegion = state.regions.find((region) => {
+        return region.combinedKey === action.payload;
+      });
     },
   },
   extraReducers: (builder) => {
@@ -39,7 +45,7 @@ export const regionsSlice = createSlice({
   },
 });
 
-export const { confirmedRegionsAdded } = regionsSlice.actions;
+export const { confirmedRegionsAdded, setSelectRegion } = regionsSlice.actions;
 
 export const selectRegions = (state) => state.confirmedRegions;
 

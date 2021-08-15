@@ -8,8 +8,8 @@ import GlobalStyle from "./globalStyles";
 
 // TODO: Import modules
 // import ConfirmedRegionList from "./features/confirmedRegions/List";
-// import ContactForm from "./features/contactForm";
 import SelectCountry from "./features/selectCountry";
+import RegionDetail from "./features/regionDetail";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Reset />
       <GlobalStyle />
       <Container asideContent={<SelectCountry />}>
-        <p>content</p>
+        <RegionDetail />
       </Container>
     </>
   );
