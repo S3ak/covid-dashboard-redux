@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import media from "styled-media-query";
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
   :root {
     // https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25
     --color-primary: #FEFAE0;
@@ -12,15 +14,13 @@ const GlobalStyle = createGlobalStyle`
     --color-senary: #4361ee;
     --color-septenary: #d00000;
     --color-black: #021526;
-    --color-grey: #bdbdbd;
 
     --c-success: var(--color-secondary);
     --c-danger: var(--color-septenary);
     --c-action: var(--color-senary);
     --c-info: var(--color-quaternary);
-    --c-muted: var(--color-grey);
+    --c-muted: #bdbdbd;
     --c-accent: var(--color-quinary);
-    --c-disabled: var(--color-grey);
     --c-text: var(--color-black);
     --c-text--inverse: var(--color-primary);
 
@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
             #393a3f;
     --color-intent-text: #fff;
     --size-global-horizontal-bleed: 20px;
-    --content-container-width: 680px;
 
 
     --size-base: 14px;
@@ -49,10 +48,6 @@ const GlobalStyle = createGlobalStyle`
     --size-xl: 3.375rem;
     --size-xxl: 5.063rem;
     --size-huge: 7.594rem;
-
-    --radius-s: 4px;
-    --radius-m: 8px;
-    --radius-l: 16px;
 
     // NOTE: https://type-scale.com/?size=14&scale=1.333&text=A%20Visual%20Type%20Scale&font=Roboto&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
     --f-size-base: 14px;
@@ -84,6 +79,7 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-size: var(--f-size-base, 16px);
+    font-family: 'Playfair Display', serif;
   }
 
   html, body {

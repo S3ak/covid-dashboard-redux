@@ -8,6 +8,7 @@ export const Header = styled.h2`
   margin-top: var(--size-l);
   width: 100%;
   font-size: var(--f-size-l);
+  font-style: italic;
 `;
 
 export const Section = styled.div`
@@ -24,14 +25,14 @@ export const Section = styled.div`
 export const Description = styled.p`
   width: 100%;
   flex: 1 1 auto;
-  margin-top: var(--size-s);
+  margin-top: var(--size);
 `;
 
 export const Figure = styled.figure`
   width: 100%;
   max-width: 600px;
   flex: 1 1 auto;
-  margin-top: var(--size-s);
+  margin-top: var(--size-l);
 
   img {
     width: 100%;

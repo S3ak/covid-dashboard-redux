@@ -38,6 +38,7 @@ const Label = styled.label`
 
 const Text = styled.h2`
   font-size: var(--f-size-l);
+  font-style: italic;
 `;
 
 const Input = styled.input`

@@ -69,6 +69,7 @@ export const StyledSelect = styled.div`
 
 export const Heading = styled.h2`
   font-size: var(--f-size-l);
+  font-style: italic;
 `;
 
 export const Info = styled.p`

@@ -3,7 +3,6 @@ import media from "styled-media-query";
 
 export const Wrapper = styled.article`
   grid-area: header;
-  font-family: Roboto;
   width: 100%;
   font-style: normal;
   background: var(--c-bg--inverse);
@@ -18,6 +17,7 @@ export const Title = styled.h1`
   color: var(--c-text--inverse);
   margin: 0 auto;
   max-width: 900px;
+  font-style: italic;
 
   ${media.greaterThan("medium")`
     margin: 0;
