@@ -11,5 +11,5 @@ test("renders list", () => {
     </Provider>
   );
 
-  expect(getByText(/loading/i)).toBeInTheDocument();
+  expect(getByText(/Covivi/i)).toBeInTheDocument();
 });
