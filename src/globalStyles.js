@@ -37,7 +37,10 @@ const GlobalStyle = createGlobalStyle`
     --color-intent-text: #fff;
     --size-global-horizontal-bleed: 20px;
     --content-container-width: 670px;
-
+    --radius-s: 2px;
+    --radius: 4px;
+    --radius-m: 5px
+    --radius-l: 8px;
 
     --size-base: 14px;
     --size-xxs: 0.296rem;
