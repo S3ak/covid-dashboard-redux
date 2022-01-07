@@ -27,7 +27,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Prerequisites
 
 - Node (I recommend using v12..0 or higher)
-- Yarn CLI
+- Yarn CLI(So lame)
 
 ## Acceptence Criteria
 
